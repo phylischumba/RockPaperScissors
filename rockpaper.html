@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+  <script type="text/javascript">
+    function play(){
+     
+    } 
+  	function computerPlay(){
+  	  let number = Math.floor(Math.random()* Math.random(3))
+  	  if (number === 0){
+  	  	return "rock";}
+  	  	else if(number === 1){
+  	  		return "paper";
+  	  	}
+  	  	else if (number === 2){
+  	  		return "scissors"
+  	  	}
+  	   
+  	}
+
+    let compScore = 0;
+    let userScore = 0;
+
+  	function playRound(playerSelection, computerSelection){
+  		
+  		switch(computerSelection.toLowerCase() == "rock"){
+  			case (playerSelection.toLowerCase()== "paper"):
+  			return "You win, Paper beats rock";
+        userScore += 1;
+  			break;
+
+  			case (playerSelection.toLowerCase() == "rock"):
+  			return "You tie!"
+
+  			break;
+
+  			case (playerSelection.toLowerCase() == "scissors"):
+  			return  "You lose, Rock beats scissors"
+        compScore += 1;
+  			break;
+  		}
+  		switch (computerSelection.toLowerCase() == "paper"){
+  			case (playerSelection.toLowerCase() == "rock"):
+  			return "You lose, Paper beats rock!"
+        compScore += 1;
+  			break;
+
+  			case (playerSelection.toLowerCase() == "paper"):
+  			return "You tied!"
+  			break;
+
+  			case (playerSelection.toLowerCase() == "scissors"):
+  			return "You win, Scissors beats paper!"
+        userScore += 1;
+  			break;
+  		}
+  		switch (computerSelection == "scissors"){
+  			case (playerSelection.toLowerCase()=="rock"):
+  			return "You win, Rock beats scissors."
+        userScore  += 1;
+  			break;
+
+  			case (playerSelection.toLowerCase()== "paper"): 
+  			return "You lose, Scissors beats paper"
+        compScore += 1;
+  			break;
+
+  			case (playerSelection.toLowerCase()== "scissors"):
+  			return "You tie"
+  			break;
+  		}
+
+  	}
+  	function game(){
+      let time;
+      for (time = 0; time < 5; time ++){
+
+        playRound(userScore(), compScore());
+        alert ("Your score is: '+ userScore'");
+        alert ("Your score is: '+ compScore'");
+      }
+      if (time == 5){
+        if (userScore > compScore){
+          alert ("You are a winner!")
+        }
+        else if (compScore > userScore){
+          alert ("Computer is winner! ")
+        } else if (compScore == userScore){
+          alert ("It is a draw!!")
+        }
+      }
+     
+  	const playerSelection = '1'
+    const computerSelection = computerPlay()
+    console.log(playRound(playerSelection, computerSelection))
+      }
+  </script>
+  <button id="btn">Click Me</button>
+</body>
+</html> 
